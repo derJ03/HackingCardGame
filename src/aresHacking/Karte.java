@@ -2,10 +2,10 @@ package aresHacking;
 
 public class Karte {
 
-	enum Seite { KONZERN,KRIMINAL,CRITTER, SÖLDNER }
+	enum Seite { KONZERN,KRIMINAL,CRITTER, SÃ–LDNER }
 	Seite seite;
 	
-	enum Tier {	EINS,ZWEI,DREI,VIER,FÜNF }
+	enum Tier { NULL,EINS,ZWEI,DREI,VIER,FÃœNF }
 	
 
 	int hp;
