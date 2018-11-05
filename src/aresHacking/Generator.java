@@ -18,7 +18,7 @@ public static void Generate(int anzahl,int tier) {
  int summe=0;
  
  float konzern=0;
- float söldner=0;
+ float sÃ¶ldner=0;
  float critter=0;
  float kriminal=0;
 
@@ -32,22 +32,27 @@ for (int i = 0; i < anzahl; i++) {
 	switch (tier) {
 	case 0: 
 		karte.setAttribute(Medi(3,6), Medi(3,6), Medi(3,6), Medi(3,6));
+		karte.tier =karte.tier.NULL;
 		break;
 	case 1: 
 		karte.setAttribute(Medi(2,6), Medi(2,6), Medi(2,6), Medi(2,6));
+		karte.tier =karte.tier.EINS;
 		break;
 	case 2: 
-		karte.setAttribute(Medi(1,6), Medi(1,6), Medi(1,6), Medi(1,6));
+		karte.setAttribute(Medi(3,10), Medi(3,10), Medi(3,10), Medi(3,10));
+		karte.tier =karte.tier.ZWEI;
 		break;
 	case 3: 
-		karte.setAttribute(Medi(3,10), Medi(3,10), Medi(3,10), Medi(3,10));
-
+		karte.setAttribute(Medi(1,6), Medi(1,6), Medi(1,6), Medi(1,6));
+		karte.tier =karte.tier.DREI;
 		break;
 	case 4: 
 		karte.setAttribute(Medi(2,10), Medi(2,10), Medi(2,10), Medi(2,10));
+		karte.tier =karte.tier.VIER;
 		break;
 	case 5: 
 		karte.setAttribute(Medi(1,10), Medi(1,10), Medi(1,10), Medi(1,10));
+		karte.tier =karte.tier.FÃœNF;
 		break;
 	
 	default: System.out.println("Bitte Zahl zwischen 0 und 4 eingeben");
@@ -68,8 +73,8 @@ for (int i = 0; i < anzahl; i++) {
 //		karte.seite = karte.seite.CRITTER;
 //		critter++;
 //	} else if (summe <=25) {
-//		karte.seite = karte.seite.SÖLDNER;
-//		söldner++;
+//		karte.seite = karte.seite.SÃ–LDNER;
+//		sÃ¶ldner++;
 //	} else {
 //		karte.seite = karte.seite.KONZERN;	
 //		konzern++;
@@ -82,7 +87,7 @@ for (int i = 0; i < anzahl; i++) {
 System.out.println("Durchschnitt: "+durchschnitt/anzahl);
 
 //System.out.println("Konzern: " + (konzern/anzahl)*100 +"%");
-//System.out.println("Söldner: " + (söldner/anzahl)*100 +"%");
+//System.out.println("SÃ¶ldner: " + (sÃ¶ldner/anzahl)*100 +"%");
 //System.out.println("Critter: " + (critter/anzahl)*100 +"%");
 //System.out.println("Kriminal: " + (kriminal/anzahl)*100 +"%");
 
@@ -92,12 +97,12 @@ System.out.println("Durchschnitt: "+durchschnitt/anzahl);
 	
 
 
-public static int Medi(int anzahl, int würfel) {
+public static int Medi(int anzahl, int wÃ¼rfel) {
 	int[] medi;
 	medi = new int[anzahl];
 	
 	for (int i = 0; i < medi.length; i++) {
-		medi[i]=Würfeln(würfel);
+		medi[i]=WÃ¼rfeln(wÃ¼rfel);
 		
 	}
 	
@@ -111,7 +116,7 @@ public static int Medi(int anzahl, int würfel) {
 	return medi[0];
 }
 
-public static int Würfeln(int x) {
+public static int WÃ¼rfeln(int x) {
 	int die=0;
 	
 	die = (int)(Math.random()*x + 1);
